@@ -30,10 +30,15 @@ generateBtn.addEventListener("click", writePassword);
   var specialCha = ['!', '#', '*', '&', '?', '@', '%', '/', '+', '=']
   console.log(specialCha)
 
+  var passCheck = []
+
   var passwordElements = []
 
-  var finalPass = ""
+  var necessaryCha = ""
+  
+  var amalPass = ""
 
+  var finalPass = ""
 
   //generate password function
 
@@ -51,6 +56,11 @@ function generatePassword() {
     var hasLower = confirm('Would you like your password to contain lowercase letters?'); 
     
     if(hasLower){
+      
+      
+
+      finalPass += lowCase[Math.floor(Math.random() * lowCase.length)]
+
       for(i = 0; i < lowCase.length; i++){
         passwordElements.push(lowCase[i]);
       }
@@ -61,7 +71,12 @@ function generatePassword() {
     //Check for uppercase
     var hasUpper = confirm('Would you like your password to contain Uppercase letters?')
 
+    
+
     if(hasUpper) {
+
+      finalPass += upCase[Math.floor(Math.random() * upCase.length)]
+
       for(j = 0; j < upCase.length; j++){
         passwordElements.push(upCase[j]);
       }
@@ -72,7 +87,14 @@ function generatePassword() {
     //Check for Numbers
     var hasNum = confirm('Would you like your password to contain numbers?');
     
+    // passCheck.push(num[Math.floor(Math.random() * num.length)]);
+    //     console.log(passCheck);
+
+        
     if(hasNum) {
+
+      finalPass += num[Math.floor(Math.random() * num.length)]
+
       for(k=0; k < num.length; k++){
         passwordElements.push(num[k]);
       }
@@ -83,24 +105,51 @@ function generatePassword() {
     //Check for Special Characters
     var hasSpecial = confirm('Would you like your password to contain special characters?');
 
+    
+
     if(hasSpecial) {
+
+      finalPass += specialCha[Math.floor(Math.random() * specialCha.length)]
+
       for(l=0; l < specialCha.length; l++){
         passwordElements.push(specialCha[l]);
       }
     }
     
+    if(lowCase === true || upCase === true || hasNum === true || hasSpecial === true){
 
     //==================
     //Randomize selected criteria and output final password.
-    for(m = 0; m < passLength; m++){
+
+    // for(n = 0; n < passCheck; n++){
+    //   necessaryCha = passCheck[n];
+    //   console.log('required: ' + necessaryCha)
+    // }
+
+    while(finalPass.length < passLength){
       finalPass += passwordElements[Math.floor(Math.random() * passwordElements.length)];
       console.log('final: ' + finalPass)
     }
 
+    // for(m = 0; m < passLength ; m++){
+    //   finalPass += passwordElements[Math.floor(Math.random() * passwordElements.length)];
+    //   console.log('final: ' + finalPass)
+    // }
+
+    
+    
+    // finalPass = necessaryCha + amalPass;
+    // console.log(finalPass)
+    
+    
+   
+    
     return finalPass;
     
 
-
+  } else { 
+    alert('Must select at least one element to use.')
+  }
     
       
 
