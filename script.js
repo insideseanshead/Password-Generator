@@ -13,33 +13,46 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Code Below this line.
+//TODO: Create Var arrays to be called on to make passwrod.
+
+  var upCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  console.log(upCase)
+
+  var lowCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  console.log(lowCase)
+
+  var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  console.log(num);
+
+  var specialCha = ['!', '#', '*', '&', '?', '@', '%', '/', '+', '=']
+  console.log(specialCha)
+
+  var passwordElements = []
+
+//TODO: create generate password function
+
 function generatePassword() {
-  var i = confirm('This is a confirm');
-  console.log(i);
+  //set length of password
+  var passLength = prompt('How many characters would you like your password to be?')
+ 
 
-  var whatEver = prompt('Another string!')
-  console.log(whatEver)
-}
+  if(passLength > 8 && passLength < 128){
+    console.log('it worked')
+    
+    var hasLower = confirm('Would you like your password to contain lowercase letters?'); 
 
-var randomMath = Math.floor(Math.random() *10)+1;
-console.log(randomMath);
+    if(hasLower){
+      for(i = 0; i < lowCase.length; i++){
+        passwordElements.push(lowCase[i])
+      }
+    }
 
-// for(var count = 0; count < 3; count++){
-//   alert("TACOS")
-// }
+    console.log(passwordElements)
 
-
-var count = 3
-console.log('Do while')
-do{
-  console.log(count)
-  count++;
-} while(count < 3)
-
-count = 3
-console.log('while')
-while(count<3){
-  console.log(count);
-  count++;
+  //   var hasUpper = confirm('Would you like your password to contain Uppercase letters?');
+  //   var hasNum = confirm('Would you like your password to contain numbers?');
+  //   var hasSpecial = confirm('Would you like your password to contain special characters?');
+  //   console.log(hasLower, hasUpper, hasNum, hasSpecial);
+  // 
+  }
 }
