@@ -38,21 +38,53 @@ function generatePassword() {
 
   if(passLength > 8 && passLength < 128){
     console.log('it worked')
-    
+    //=================
+    //Check for Lowercase
     var hasLower = confirm('Would you like your password to contain lowercase letters?'); 
-
+    
     if(hasLower){
       for(i = 0; i < lowCase.length; i++){
-        passwordElements.push(lowCase[i])
+        passwordElements.push(lowCase[i]);
+      }
+    } 
+
+    
+    //==================
+    //Check for uppercase
+    var hasUpper = confirm('Would you like your password to contain Uppercase letters?')
+
+    if(hasUpper) {
+      for(j = 0; j < upCase.length; j++){
+        passwordElements.push(upCase[j]);
       }
     }
+    
+    
+    //==================
+    //Check for Numbers
+    var hasNum = confirm('Would you like your password to contain numbers?');
+    
+    if(hasNum) {
+      for(k=0; k < num.length; k++){
+        passwordElements.push(num[k]);
+      }
+    }
+    
 
+    //==================
+    //Check for Special Characters
+    var hasSpecial = confirm('Would you like your password to contain special characters?');
+
+    if(hasSpecial) {
+      for(l=0; l < specialCha.length; l++){
+        passwordElements.push(specialCha[l]);
+      }
+    }
+    
+    
+    
     console.log(passwordElements)
 
-  //   var hasUpper = confirm('Would you like your password to contain Uppercase letters?');
-  //   var hasNum = confirm('Would you like your password to contain numbers?');
-  //   var hasSpecial = confirm('Would you like your password to contain special characters?');
-  //   console.log(hasLower, hasUpper, hasNum, hasSpecial);
-  // 
+  
   }
 }
