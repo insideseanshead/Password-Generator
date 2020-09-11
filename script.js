@@ -13,7 +13,10 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//TODO: Create Var arrays to be called on to make passwrod.
+//=================================================================
+
+
+//Arrays that password generators will draw from.
 
   var upCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   console.log(upCase)
@@ -29,14 +32,19 @@ generateBtn.addEventListener("click", writePassword);
 
   var passwordElements = []
 
-//TODO: create generate password function
+  var finalPass = ""
+
+
+  //generate password function
 
 function generatePassword() {
   //set length of password
   var passLength = prompt('How many characters would you like your password to be?')
+
+  console.log('Password length '+ passLength)
  
 
-  if(passLength > 8 && passLength < 128){
+  if(passLength >= 8 && passLength <= 128){
     console.log('it worked')
     //=================
     //Check for Lowercase
@@ -81,10 +89,26 @@ function generatePassword() {
       }
     }
     
+
+    //==================
+    //Randomize selected criteria and output final password.
+    for(m = 0; m < passLength; m++){
+      finalPass += passwordElements[Math.floor(Math.random() * passwordElements.length)];
+      console.log('final: ' + finalPass)
+    }
+
+    return finalPass;
     
+
+
     
-    console.log(passwordElements)
+      
+
+    
 
   
+  } else {
+    alert('Please select a number between 8 and 128 characters.')
   }
+  
 }
