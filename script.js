@@ -30,14 +30,11 @@ generateBtn.addEventListener("click", writePassword);
   var specialCha = ['!', '#', '*', '&', '?', '@', '%', '/', '+', '=']
   console.log(specialCha)
 
-  var passCheck = []
+  
 
   var passwordElements = []
 
-  var necessaryCha = ""
   
-  var amalPass = ""
-
   var finalPass = ""
 
   //generate password function
@@ -87,9 +84,6 @@ function generatePassword() {
     //Check for Numbers
     var hasNum = confirm('Would you like your password to contain numbers?');
     
-    // passCheck.push(num[Math.floor(Math.random() * num.length)]);
-    //     console.log(passCheck);
-
         
     if(hasNum) {
 
@@ -119,30 +113,14 @@ function generatePassword() {
     if(lowCase === true || upCase === true || hasNum === true || hasSpecial === true){
 
     //==================
-    //Randomize selected criteria and output final password.
+    //Randomize selected criteria and compile final password.
 
-    // for(n = 0; n < passCheck; n++){
-    //   necessaryCha = passCheck[n];
-    //   console.log('required: ' + necessaryCha)
-    // }
 
     while(finalPass.length < passLength){
       finalPass += passwordElements[Math.floor(Math.random() * passwordElements.length)];
       console.log('final: ' + finalPass)
     }
 
-    // for(m = 0; m < passLength ; m++){
-    //   finalPass += passwordElements[Math.floor(Math.random() * passwordElements.length)];
-    //   console.log('final: ' + finalPass)
-    // }
-
-    
-    
-    // finalPass = necessaryCha + amalPass;
-    // console.log(finalPass)
-    
-    
-   
     
     return finalPass;
     
