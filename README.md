@@ -16,3 +16,7 @@ For this project I wanted to push my understanding of the use of JavaScripts loo
 ## Take Aways
 
 I feel I have a much stronger grasp of the flow of a JS function. How to push info from various arrays into a master array. And using concepts like Math.floor and Math.random to access the information within that final array.
+
+### Give it a try
+
+https://insideseanshead.github.io/Password-Generator/.
